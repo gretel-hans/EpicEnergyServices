@@ -38,12 +38,6 @@ public class AuthUser implements Serializable {
     private String password;
     private Boolean active;
     private LocalDateTime date;
-    @Convert(converter = CreditCardConverter.class)
-    private String creditCard;
-    @Convert(converter = SecretCodeConverter.class)
-    private String secretCode;
-    @Convert(converter = AlfaSecretCodeConverter.class)
-    private String alfaCode;
     
     
     // Il caricamento EAGER delle raccolte significa che vengono recuperate 
