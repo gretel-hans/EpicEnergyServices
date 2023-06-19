@@ -25,7 +25,7 @@ public class StatoFattura {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "nomi")
-	private Stato_Fatture statoFattura;
+	private Stato_Fatture statoFatture;
 	
 	
 
