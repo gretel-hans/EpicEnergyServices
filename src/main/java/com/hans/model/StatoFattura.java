@@ -24,8 +24,8 @@ public class StatoFattura {
 	private Long id;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "nomi")
-	private Stato_Fatture statoFatture;
+	@Column(name = "nome")
+	private Stato_Fatture statoFattura;
 	
 	
 
