@@ -1,0 +1,130 @@
+11:35:20.285 [restartedMain] INFO  c.hans.EpicEnergyServicesApplication - Starting EpicEnergyServicesApplication using Java 17.0.7 with PID 32690 (/Users/hanseladjei/eclipse-workspace/EpicEnergyServices/target/classes started by hanseladjei in /Users/hanseladjei/eclipse-workspace/EpicEnergyServices)
+11:35:20.288 [restartedMain] INFO  c.hans.EpicEnergyServicesApplication - No active profile set, falling back to 1 default profile: "default"
+11:35:20.338 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+11:35:20.339 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+11:35:21.036 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:35:21.054 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+11:35:21.761 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+11:35:21.771 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:35:21.771 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:35:21.825 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:35:21.825 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1486 ms
+11:35:21.951 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11:35:21.992 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+11:35:21.994 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+11:35:22.068 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+11:35:22.145 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+11:35:22.159 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11:35:22.281 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@66a7e8f3
+11:35:22.283 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11:35:22.322 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@644b9b3
+11:35:22.380 [restartedMain] WARN  o.h.b.i.SessionFactoryOptionsBuilder - Unrecognized hibernate.hbm2ddl.auto value: 'drop-and-create'.  Supported values include 'create', 'create-drop', 'create-only', 'drop', 'update', 'none' and 'validate'.  Ignoring
+11:35:22.381 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+11:35:22.513 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11:35:22.516 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11:35:22.573 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11:35:22.828 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+11:35:22.920 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fce02501-f11d-408c-a38c-a1a4ce6f1d07
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+11:35:22.999 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5f7ff0d3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3eca23c8, org.springframework.security.web.context.SecurityContextHolderFilter@62a7d86f, org.springframework.security.web.header.HeaderWriterFilter@1423f92, org.springframework.security.web.csrf.CsrfFilter@406d6b59, org.springframework.security.web.authentication.logout.LogoutFilter@bef6189, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@621133df, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@238cf522, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5a78b7e9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5fb7dc68, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@206e32a4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e885736, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f493687, org.springframework.security.web.access.ExceptionTranslationFilter@7b14598, org.springframework.security.web.access.intercept.AuthorizationFilter@73d92282]
+11:35:23.055 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+11:35:23.086 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+11:35:23.090 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11:35:23.093 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11:35:23.096 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11:35:23.098 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+11:35:23.111 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+11:35:23.126 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+11:36:33.216 [restartedMain] INFO  c.hans.EpicEnergyServicesApplication - Starting EpicEnergyServicesApplication using Java 17.0.7 with PID 32820 (/Users/hanseladjei/eclipse-workspace/EpicEnergyServices/target/classes started by hanseladjei in /Users/hanseladjei/eclipse-workspace/EpicEnergyServices)
+11:36:33.218 [restartedMain] INFO  c.hans.EpicEnergyServicesApplication - No active profile set, falling back to 1 default profile: "default"
+11:36:33.264 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+11:36:33.265 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+11:36:33.932 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:36:33.948 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+11:36:34.613 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+11:36:34.621 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:36:34.621 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:36:34.681 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:36:34.681 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1416 ms
+11:36:34.807 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11:36:34.835 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+11:36:34.836 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+11:36:34.900 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+11:36:34.979 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+11:36:34.990 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11:36:35.112 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@674f35fe
+11:36:35.113 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11:36:35.143 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@448eb8bc
+11:36:35.203 [restartedMain] WARN  o.h.b.i.SessionFactoryOptionsBuilder - Unrecognized hibernate.hbm2ddl.auto value: 'drop-and-create'.  Supported values include 'create', 'create-drop', 'create-only', 'drop', 'update', 'none' and 'validate'.  Ignoring
+11:36:35.204 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+11:36:35.328 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11:36:35.332 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11:36:35.388 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11:36:35.627 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+11:36:35.724 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0b1d8a1c-271c-4d7c-be75-b8834fac5902
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+11:36:35.794 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@60c974df, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f3378bc, org.springframework.security.web.context.SecurityContextHolderFilter@2c709573, org.springframework.security.web.header.HeaderWriterFilter@27e937c2, org.springframework.security.web.csrf.CsrfFilter@fd458b2, org.springframework.security.web.authentication.logout.LogoutFilter@38718179, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4b6bae04, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@51f6a90c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2deada68, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7aa8adaf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3dfab01b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46bb0517, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18e3aa7d, org.springframework.security.web.access.ExceptionTranslationFilter@3dda3c57, org.springframework.security.web.access.intercept.AuthorizationFilter@30ea02b4]
+11:36:35.851 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+11:36:35.889 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+11:36:35.900 [restartedMain] INFO  c.hans.EpicEnergyServicesApplication - Started EpicEnergyServicesApplication in 3.115 seconds (process running for 3.898)
+11:53:02.130 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 6 class path changes (0 additions, 3 deletions, 3 modifications)
+11:53:02.184 [Thread-5] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+11:53:02.234 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+11:53:02.246 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+11:53:02.259 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11:53:02.578 [restartedMain] INFO  c.hans.EpicEnergyServicesApplication - Starting EpicEnergyServicesApplication using Java 17.0.7 with PID 32820 (/Users/hanseladjei/eclipse-workspace/EpicEnergyServices/target/classes started by hanseladjei in /Users/hanseladjei/eclipse-workspace/EpicEnergyServices)
+11:53:02.580 [restartedMain] INFO  c.hans.EpicEnergyServicesApplication - No active profile set, falling back to 1 default profile: "default"
+11:53:03.345 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:53:03.371 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 JPA repository interfaces.
+11:53:03.955 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+11:53:03.967 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:53:03.968 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:53:04.017 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:53:04.018 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1428 ms
+11:53:04.157 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11:53:04.174 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+11:53:04.175 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+11:53:04.177 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+11:53:04.417 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@7d6217e7
+11:53:04.419 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+11:53:04.550 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@1ab20c2c
+11:53:04.565 [restartedMain] WARN  o.h.b.i.SessionFactoryOptionsBuilder - Unrecognized hibernate.hbm2ddl.auto value: 'drop-and-create'.  Supported values include 'create', 'create-drop', 'create-only', 'drop', 'update', 'none' and 'validate'.  Ignoring
+11:53:04.567 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+11:53:04.614 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11:53:04.615 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11:53:04.706 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11:53:05.020 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+11:53:05.213 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 1c52e93b-6c46-4228-9d3e-ce8b479df727
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+11:53:05.286 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e48f990, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f9d31ab, org.springframework.security.web.context.SecurityContextHolderFilter@5ec49394, org.springframework.security.web.header.HeaderWriterFilter@a90f8c6, org.springframework.security.web.csrf.CsrfFilter@70102a88, org.springframework.security.web.authentication.logout.LogoutFilter@2df146a5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@963ea19, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@749cc9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@59383963, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@750dafda, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f71a6ae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@daf0372, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41d33ee1, org.springframework.security.web.access.ExceptionTranslationFilter@5b9f2c6e, org.springframework.security.web.access.intercept.AuthorizationFilter@383d273d]
+11:53:05.330 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+11:53:05.385 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+11:53:05.401 [restartedMain] INFO  c.hans.EpicEnergyServicesApplication - Started EpicEnergyServicesApplication in 2.962 seconds (process running for 993.411)
+11:53:05.427 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
