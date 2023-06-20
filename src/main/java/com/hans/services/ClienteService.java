@@ -1,5 +1,7 @@
 package com.hans.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.hans.model.Cliente;
@@ -24,5 +26,9 @@ public class ClienteService {
 		return clienteRepository.save(cliente);
 	}
 	
-
+    public List<Cliente> searchAllClienti(){
+    	return clienteRepository.findAll();
+    	
+    } 
 }
+  
