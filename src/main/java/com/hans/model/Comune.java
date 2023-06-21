@@ -36,4 +36,5 @@ public class Comune {
 	@Column(name = "denominazione_provincia")
 	private String denominazioneProvincia;
 	
+	
 }
