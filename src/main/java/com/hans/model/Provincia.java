@@ -7,11 +7,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "province")
 public class Provincia {
@@ -25,5 +28,10 @@ public class Provincia {
 	private String nome;
 
 	private String regione;
+
+	@Override
+	public String toString() {
+		return "Provincia [id=" + id + ", sigla=" + sigla + ", nome=" + nome + ", regione=" + regione + "]";
+	}
 
 }
