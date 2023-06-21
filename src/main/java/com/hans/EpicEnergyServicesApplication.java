@@ -8,7 +8,6 @@ public class EpicEnergyServicesApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EpicEnergyServicesApplication.class, args);
-		System.out.println("Fatto da hans..");
 	}
 
 }
