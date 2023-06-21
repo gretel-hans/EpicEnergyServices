@@ -23,6 +23,9 @@ public class EnergyRunner implements CommandLineRunner {
 
 	@Autowired
 	ProvinciaRepository provinciaRepository;
+	
+	@Autowired
+	ComuneRepository comuneRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -34,6 +37,10 @@ public class EnergyRunner implements CommandLineRunner {
 
 		if (provinciaRepository.findAll().size() == 0) {
 			setProvince();
+		}
+		
+		if (comuneRepository.findAll().size() == 0) {
+			setComune();
 		}
 
 	}
@@ -49,12 +56,12 @@ public class EnergyRunner implements CommandLineRunner {
 		String provinceTotali;
 		String[] rigaProvincia;
 		String[] unicaProvincia;
-		// parsing a CSV file into Scanner class constructor
+		
 		Scanner sc;
 		try {
 			sc = new Scanner(new File("comuniEProvince/province-italiane.csv"));
-			sc.useDelimiter(","); // sets the delimiter pattern
-			while (sc.hasNext()) // returns a boolean value
+			sc.useDelimiter(","); 
+			while (sc.hasNext()) 
 			{
 				provinceTotali = sc.next();
 				rigaProvincia = provinceTotali.split("\n");
@@ -70,5 +77,34 @@ public class EnergyRunner implements CommandLineRunner {
 		}
 
 	}
-
+    
+	public void setComune() {
+		Scanner sc2;
+		String comuniTotali;
+		String[] rigaComuni;
+		String[] unicoComune;
+		
+		try {
+			sc2 = new Scanner(new File("comuniEProvince/comuni-italiani.csv"));
+			sc2.useDelimiter(","); 
+			while (sc2.hasNext()) 
+			{
+				comuniTotali = sc2.next();
+				rigaComuni = comuniTotali.split("\n");
+				for (int i = 0; i < rigaComuni.length; i++) {
+					unicoComune = rigaComuni[i].split(";");
+					Long provinciaId = Long.parseLong(unicoComune[0]);
+					//Provincia p1 = provinciaRepository.findById(provinciaId).get();
+					//Comune c = new Comune(null, p1, unicoComune[1], unicoComune[2]);
+					//comuneRepository.save(c);
+					System.out.println(provinciaId);
+						
+				}
+				
+			}
+			sc2.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 }
