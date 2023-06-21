@@ -30,8 +30,12 @@ public class Comune {
 	
 	private String cap;
 
+	@Column(name = "nome_comune")
+	private String nomeComune;
+
 	@Column(name = "denominazione_provincia")
 	private String denominazioneProvincia;
 	
+
 	
 }

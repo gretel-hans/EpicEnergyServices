@@ -93,12 +93,12 @@ public class EnergyRunner implements CommandLineRunner {
 				rigaComuni = comuniTotali.split("\n");
 				for (int i = 0; i < rigaComuni.length; i++) {
 					unicoComune = rigaComuni[i].split(";");
-					Long provinciaId = Long.parseLong(unicoComune[0]);
-					//Provincia p1 = provinciaRepository.findById(provinciaId).get();
-					//Comune c = new Comune(null, p1, unicoComune[1], unicoComune[2]);
-					//comuneRepository.save(c);
-					System.out.println(provinciaId);
-						
+					Long idProvincia=Long.parseLong(unicoComune[1]);
+					if(idProvincia<=110 && unicoComune.length==5){
+						Provincia p1 = provinciaRepository.findById(idProvincia).get();
+						Comune c = new Comune(null, p1, unicoComune[2], unicoComune[3],unicoComune[4]);
+						comuneRepository.save(c);
+					}
 				}
 				
 			}
