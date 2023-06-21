@@ -5,8 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,9 +24,13 @@ public class Comune {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name = "comune_progressivo")
+	private Integer comuneProgressivo;
+	
 	private String nome;
 	
 	@ManyToOne
+	@JoinColumn(name = "codice_provincia")
 	private Provincia provinca;
 	
 	@Column(name = "denominazione_provincia")
