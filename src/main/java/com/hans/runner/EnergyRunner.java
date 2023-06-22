@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import com.github.javafaker.Faker;
 import com.hans.enumeration.Stato_Fatture;
+import com.hans.enumeration.TipoCliente;
 import com.hans.model.Cliente;
 import com.hans.model.Comune;
 import com.hans.model.Fattura;
@@ -22,6 +25,8 @@ import com.hans.model.StatoFattura;
 import com.hans.repository.ComuneRepository;
 import com.hans.repository.ProvinciaRepository;
 import com.hans.repository.StatoFatturaRepository;
+import com.hans.services.ClienteService;
+import com.hans.services.FatturaService;
 import com.hans.services.IndirizzoService;
 import com.hans.services.ProvinciaService;
 
@@ -30,6 +35,9 @@ public class EnergyRunner implements CommandLineRunner {
 
 	@Autowired
 	StatoFatturaRepository statoFatturaRepository;
+	
+	@Autowired
+	FatturaService fatturaService;
 
 	@Autowired
 	ProvinciaRepository provinciaRepository;
@@ -42,6 +50,9 @@ public class EnergyRunner implements CommandLineRunner {
 	
 	@Autowired
 	IndirizzoService indirizzoService;
+	
+	@Autowired
+	ClienteService clienteService;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -57,6 +68,10 @@ public class EnergyRunner implements CommandLineRunner {
 		
 		if (comuneRepository.findAll().size() == 0) {
 			setComune();
+		}
+		
+		for(int i = 0; i < 30; i++) {
+			setClienti();
 		}
 
 	}
@@ -137,19 +152,42 @@ public class EnergyRunner implements CommandLineRunner {
 		Faker fake= Faker.instance(new Locale("it-IT"));
 		
 		//ISTANZIAMO CLASSE FATTURA
+		List<Fattura> fat = new ArrayList<>();
+		
+		for(int i = 0; i < 3; i++) {
 		Fattura f = new Fattura();
 		f.setData(LocalDateTime.now());
 		f.setAnno(f.getData().getYear());
+		f.setImporto(fake.number().randomDouble(3, 3, 6));
+		f.setNumeroFattura(fake.number().numberBetween(1, 1000));
+		f.setStato(statoFatturaRepository.findById(fake.number().numberBetween(1l, 2l)).get());
+		fat.add(fatturaService.saveFattura(f));
+		}
+		
+		
 		
 		
 		//ISTANZIAMO CLASSE INDIRIZZO
-		Indirizzo i = new Indirizzo();
-		i.setVia(fake.address().firstName());
-		i.setCivico(fake.address().buildingNumber());
-		i.setLocalita(fake.address().country());
-		i.setCap(fake.address().zipCode());
-		i.setComune(comuneRepository.findById(fake.number().numberBetween(1l, 7000l)).get());
-		indirizzoService.saveIndirizzo(i);
+		List <Indirizzo> ind = new ArrayList<>();
+		
+		//ciclo for eseguito due volte per generare due indirizzi fake(per sedeLegale e sedeOperativa)
+		for(int i = 0; i < 2; i++) {
+			
+		Indirizzo indirizzo = new Indirizzo();
+		
+		indirizzo.setVia(fake.address().firstName());
+		indirizzo.setCivico(fake.address().buildingNumber());
+		indirizzo.setLocalita(fake.address().country());
+		indirizzo.setCap(fake.address().zipCode());
+		indirizzo.setComune(comuneRepository.findById(fake.number().numberBetween(1l, 7000l)).get());
+		ind.add(indirizzoService.saveIndirizzo(indirizzo));
+		
+		}
+		
+		
+	
+		TipoCliente[] type = {TipoCliente.PA, TipoCliente.SAS, TipoCliente.SPA, TipoCliente.SRL};
+		
 		
 		
 		//ISTANZIAMO CLASSE CLIENTE
@@ -166,6 +204,13 @@ public class EnergyRunner implements CommandLineRunner {
 		c.setNomeContatto(fake.name().name());
 		c.setCongomeContatto(fake.name().lastName());
 		c.setTelefonoContatto(fake.phoneNumber().phoneNumber());
+		c.setSedeLegale(indirizzoService.searchIndirizzo(ind.get(0).getId()));
+		c.setSedeOperativa(indirizzoService.searchIndirizzo(ind.get(1).getId()));
+		int numeroCasuale= fake.number().numberBetween(0, 3);
+		c.setTipoCliente(type[numeroCasuale]);
+		c.setFattura(fat);
+		clienteService.saveCliente(c);
+		
 				
 		
 	}

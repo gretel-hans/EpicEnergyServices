@@ -14,7 +14,7 @@ public class FatturaService {
 	@Autowired
 	FatturaRepository fatturaRepository;
 	
-    public Fattura createFattura(Fattura fattura) {
+    public Fattura saveFattura(Fattura fattura) {
     	return fatturaRepository.save(fattura);
     }
     public Fattura searchFattura(Long id) {
