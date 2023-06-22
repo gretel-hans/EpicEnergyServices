@@ -24,18 +24,15 @@ public class Comune {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne
-	@JoinColumn(name = "codice_provincia")
-	private Provincia provinca;
+	@Column(name = "codice_provincia")
+	private String codiceProvincia;
 	
 	private String cap;
 
 	@Column(name = "nome_comune")
 	private String nomeComune;
 
-	@Column(name = "denominazione_provincia")
-	private String denominazioneProvincia;
-	
-
+	@ManyToOne
+	private Provincia provinca;
 	
 }

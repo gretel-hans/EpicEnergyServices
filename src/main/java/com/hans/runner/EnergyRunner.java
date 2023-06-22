@@ -14,6 +14,7 @@ import com.hans.model.StatoFattura;
 import com.hans.repository.ComuneRepository;
 import com.hans.repository.ProvinciaRepository;
 import com.hans.repository.StatoFatturaRepository;
+import com.hans.services.ProvinciaService;
 
 @Component
 public class EnergyRunner implements CommandLineRunner {
@@ -23,6 +24,9 @@ public class EnergyRunner implements CommandLineRunner {
 
 	@Autowired
 	ProvinciaRepository provinciaRepository;
+
+	@Autowired
+	ProvinciaService provinciaService;
 	
 	@Autowired
 	ComuneRepository comuneRepository;
@@ -84,24 +88,27 @@ public class EnergyRunner implements CommandLineRunner {
 		String[] rigaComuni;
 		String[] unicoComune;
 		
+
 		try {
 			sc2 = new Scanner(new File("comuniEProvince/comuni-italiani.csv"));
 			sc2.useDelimiter(","); 
 			while (sc2.hasNext()) 
 			{
+				
 				comuniTotali = sc2.next();
 				rigaComuni = comuniTotali.split("\n");
 				for (int i = 0; i < rigaComuni.length; i++) {
 					unicoComune = rigaComuni[i].split(";");
-					Long idProvincia=Long.parseLong(unicoComune[1]);
-					if(idProvincia<=110 && unicoComune.length==5){
-						Provincia p1 = provinciaRepository.findById(idProvincia).get();
-						Comune c = new Comune(null, p1, unicoComune[2], unicoComune[3],unicoComune[4]);
-						comuneRepository.save(c);
+					
+					if( !(unicoComune[1].equals("#RIF!"))  ){
+						Provincia p1 = provinciaService.cercaProvinciaConNome(unicoComune[3].trim());
+						if(p1!=null){
+							Comune c = new Comune(null,unicoComune[0],unicoComune[1],unicoComune[2],p1);
+							comuneRepository.save(c);
+						}
 					}
 				}
-				
-			}
+				}
 			sc2.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
