@@ -24,7 +24,7 @@ public class Fattura {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private LocalDate anno;
+	private Integer anno;
 	
 	private LocalDateTime data;
 

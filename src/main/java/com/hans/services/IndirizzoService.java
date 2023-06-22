@@ -12,12 +12,14 @@ public class IndirizzoService {
 	@Autowired
 	 IndirizzoRepository indirizzoRepository;
 	
-     public Indirizzo createIndirizzo(Indirizzo indirizzo) {
+     public Indirizzo saveIndirizzo(Indirizzo indirizzo) {
     	 return indirizzoRepository.save(indirizzo);
      }
+     
 	 public Indirizzo searchIndirizzo(Long id) {
 		 return indirizzoRepository.findById(id).get();
 	 }
+	 
 	 public Indirizzo updateIndirizzo (Indirizzo indirizzo) {
 	    return indirizzoRepository.save(indirizzo);
 	 }
