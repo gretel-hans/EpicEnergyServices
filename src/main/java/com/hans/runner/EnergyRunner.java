@@ -94,7 +94,6 @@ public class EnergyRunner implements CommandLineRunner {
 			sc2.useDelimiter(","); 
 			while (sc2.hasNext()) 
 			{
-				
 				comuniTotali = sc2.next();
 				rigaComuni = comuniTotali.split("\n");
 				for (int i = 0; i < rigaComuni.length; i++) {
