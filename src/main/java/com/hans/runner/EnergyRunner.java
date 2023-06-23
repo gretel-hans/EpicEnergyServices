@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -76,28 +77,60 @@ public class EnergyRunner implements CommandLineRunner {
 				setClienti();
 			}
 		}
+//
+//		System.out.println("----\nLista clienti per Fatturato annuale maggiore tot:\n----");
+//		List<Cliente> listaClienti=clienteService.cercaPerFatturatoAnnualeMaggiore(9000000);
+//		listaClienti.forEach(c->System.out.println(c.getNomeContatto()));
+//		
+//		
+//		 System.out.println("----\nLista clienti per data di inserimento contatto:\n----");
+//		List<Cliente> listaDataInserimento=clienteService.cercaPerDataInserimento(LocalDate.of(2022, 10, 6));
+//		listaDataInserimento.forEach(d->System.out.println(d.getDataInserimento() + " " +d.getNomeContatto()+" "+d.getCongomeContatto()));
+//
+//		
+//		System.out.println("----\nLista clienti per data dell'ultimo contatto:\n----");
+//		List<Cliente> listaDataUltimoContatto=clienteService.cercaPerDataUltimoContatto(LocalDate.of(2022, 1, 10));
+//		listaDataUltimoContatto.forEach(u->System.out.println(u.getDataUltimoContatto()+" "+u.getNomeContatto()+" "+u.getCongomeContatto()));
+//
+//		System.out.println("----\nLista clienti per parte del nome del contatto:\n----");	
+//		List<Cliente> listaParteDelNome=clienteService.cercaPerParteDelNome("M");
+//		listaParteDelNome.forEach(n->System.out.println(n.getNomeContatto()));
+//
+//		System.out.println("----\nLista Fatture per cliente:\n----");	
+//		List<Fattura> listaFatturePerCliente=clienteService.cercaFatturaByCliente("Fulvio");
+//		listaFatturePerCliente.forEach(fc->System.out.println(fc));
+//
+//		System.out.println("----\nRicerca per Stato della Fattura:\n----");	
+//		List<Fattura> listaStatoFattura=fatturaService.ricercaStatus(Stato_Fatture.NON_PAGATO);
+//		listaStatoFattura.forEach(st->System.out.println(st));
+//		 
+//		System.out.println("----\nRicerca per data Fattura:\n----");	
+//		List<Fattura> listaDateFattura=fatturaService.ricercaPerDataFattura(LocalDateTime.of(LocalDate.of(2022, 10, 2), LocalTime.of(17, 00)));
+//		listaDateFattura.forEach(df->System.out.println(df));
+//		
+//		System.out.println("----\nRicerca fattura per anno:\n----");	
+//		List<Fattura> listaFatturaAnno=fatturaService.ricercaFatturaPerAnno(2022);
+//		listaFatturaAnno.forEach(fa->System.out.println(fa));
+		
+//		System.out.println("----\nRicerca importo Fattura:\n----");	
+//		List<Fattura> listaImportoFattura=fatturaService.ricercaPerImporto(197132.192, 232529.501);
+//		listaImportoFattura.forEach(fi->System.out.println(fi));
+		
+//		System.out.println("----\nOrdina per cliente:\n----");	
+//		List<Cliente> listaordinePerCliente=clienteService.ordinaPerNomeCliente();
+//		listaordinePerCliente.forEach(oc->System.out.println(oc.getNomeContatto()+" "+oc.getCongomeContatto()));
 
-		 System.out.println("----\nLista clienti per Fatturato annuale maggiore tot:\n----");
-		 
-		List<Cliente> listaClienti=clienteService.cercaPerFatturatoAnnualeMaggiore(9000000);
-		listaClienti.forEach(c->System.out.println(c.getNomeContatto()));
-		
-		
-		 System.out.println("----\nLista clienti per data di inserimento contatto:\n----");
-		
-		List<Cliente> listaDataInserimento=clienteService.cercaPerDataInserimento(LocalDate.of(2022, 10, 6));
-		listaDataInserimento.forEach(d->System.out.println(d.getDataInserimento() + " " +d.getNomeContatto()+" "+d.getCongomeContatto()));
+//		System.out.println("----\nOrdina per fattura annuala:\n----");	
+//		List<Cliente> listaFatturaAnnuale=clienteService.ordinaPerFatturatoAnnuale();
+//		listaFatturaAnnuale.forEach(fa->System.out.println(fa.getNomeContatto()+" "+fa.getCongomeContatto()+", fatturato annuale: "+fa.getFatturatoAnnuale()));
 
-		
-		 System.out.println("----\nLista clienti per data dell'ultimo contatto:\n----");
-		
-		List<Cliente> listaDataUltimoContatto=clienteService.cercaPerDataUltimoContatto(LocalDate.of(2022, 1, 10));
-		listaDataUltimoContatto.forEach(u->System.out.println(u.getDataUltimoContatto()+" "+u.getNomeContatto()+" "+u.getCongomeContatto()));
+		 System.out.println("----\nOrdina per data inserimento:\n----");	
+		 List<Cliente> listaDataInserimento=clienteService.ordinaPerDataInserimento();
+		 listaDataInserimento.forEach(da->System.out.println(da.getNomeContatto()+" "+da.getCongomeContatto()+", data inserimento: "+da.getDataInserimento()));
 
-		System.out.println("----\nLista clienti per parte del nome del contatto:\n----");
-			
-		List<Cliente> listaParteDelNome=clienteService.cercaPerParteDelNome("M");
-		listaParteDelNome.forEach(n->System.out.println(n.getNomeContatto()));
+//		 System.out.println("----\nOrdina per data ultimo contatto:\n----");	
+//		 List<Cliente> listaDataUltimoContatto=clienteService.ordinaPerDataUltimoContatto();
+//		 listaDataUltimoContatto.forEach(ul->System.out.println(ul.getNomeContatto()+" "+ul.getCongomeContatto()+", data ultimo contatto: "+ul.getDataUltimoContatto()));
 
 
 	}
@@ -184,7 +217,7 @@ public class EnergyRunner implements CommandLineRunner {
 		Fattura f = new Fattura();
 		f.setData(LocalDateTime.now().minusDays(fake.number().numberBetween(1l, 2190l)));
 		f.setAnno(f.getData().getYear());
-		f.setImporto(fake.number().randomDouble(3, 10000, 900000)+" €");
+		f.setImporto(fake.number().randomDouble(3, 10000, 900000));
 		f.setNumeroFattura(fake.number().numberBetween(1, 1000));
 		f.setStato(statoFatturaRepository.findById(fake.number().numberBetween(1l, 3l)).get());
 		fat.add(fatturaService.saveFattura(f));
