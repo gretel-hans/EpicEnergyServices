@@ -70,9 +70,16 @@ public class EnergyRunner implements CommandLineRunner {
 			setComune();
 		}
 		
-		for(int i = 0; i < 30; i++) {
-			setClienti();
+		
+		 if(clienteService.searchAllClienti().size()!=60){
+			for(int i = 0; i < 30; i++) {
+				setClienti();
+			}
 		}
+
+		List<Cliente> listaClienti=clienteService.cercaPerFatturatoAnnualeMaggiore(9000000);
+		listaClienti.forEach(c->System.out.println(c.getNomeContatto()));
+
 
 	}
 	
@@ -199,7 +206,7 @@ public class EnergyRunner implements CommandLineRunner {
 		c.setEmail(c.getNomeContatto()+"."+c.getCongomeContatto()+"@gmail.com");
 		c.setDataInserimento(LocalDate.now().minusDays(fake.number().numberBetween(1l, 366l)));
 		c.setDataUltimoContatto(c.getDataInserimento().plusDays(fake.number().numberBetween(1l, 366l)));
-		c.setFatturatoAnnuale(fake.number().randomNumber(8, false)+" €");
+		c.setFatturatoAnnuale(fake.number().randomNumber(7, false));
 		c.setPec(c.getNomeContatto()+"@pec.com");
 		c.setTelefono(fake.phoneNumber().cellPhone());
 		c.setEmailContatto(c.getNomeContatto()+"."+c.getCongomeContatto()+"@yahoo.it");

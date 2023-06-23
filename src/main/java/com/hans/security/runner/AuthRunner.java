@@ -65,17 +65,6 @@ public class AuthRunner implements ApplicationRunner {
 		moderator.setRoleName(ERole.ROLE_MODERATOR);
 		roleRepository.save(moderator);
 		
-//		adminRole = new HashSet<Role>();
-//		adminRole.add(admin);
-//		adminRole.add(moderator);
-//		adminRole.add(user);
-//		
-//		moderatorRole = new HashSet<Role>();
-//		moderatorRole.add(moderator);
-//		moderatorRole.add(user);
-//		
-//		userRole = new HashSet<Role>();
-//		userRole.add(user);
 	}
 	
 	private void saveUser() {

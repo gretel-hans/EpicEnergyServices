@@ -31,7 +31,10 @@ public class ClienteService {
 		return clienteRepository.save(cliente);
 	}
 	
-	
+
+	public List<Cliente> cercaPerFatturatoAnnualeMaggiore(double importo){
+		return clienteRepository.findByFatturatoAnnualeGreaterThanEqual(importo);
+	}
 	
 	
     public List<Cliente> searchAllClienti(){

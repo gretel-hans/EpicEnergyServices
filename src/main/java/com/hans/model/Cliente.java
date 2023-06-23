@@ -8,6 +8,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -44,7 +45,7 @@ public class Cliente {
 	private LocalDate dataUltimoContatto;
 	
 	@Column(name = "fatturato_annuale")
-	private String fatturatoAnnuale;
+	private double fatturatoAnnuale;
 	
 	private String pec;
 	
@@ -74,7 +75,7 @@ public class Cliente {
 	@Column(name = "tipo_cliente")
 	private TipoCliente tipoCliente;
 	
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	private List<Fattura> fattura;
 
 }
