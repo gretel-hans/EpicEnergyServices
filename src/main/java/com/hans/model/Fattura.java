@@ -28,7 +28,7 @@ public class Fattura {
 	
 	private LocalDateTime data;
 
-	private double importo;
+	private String importo;
 	
 	@Column(name = "numero")
 	private Integer numeroFattura;

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import com.hans.model.Cliente;
 import com.hans.repository.ClienteRepository;
 
+import jakarta.persistence.EntityExistsException;
+
 @Service
 public class ClienteService {
 	
@@ -22,9 +24,15 @@ public class ClienteService {
 		return clienteRepository.findById(id).get();
 	}
 	
-	public Cliente updateCliente(Cliente cliente) {
+	public Cliente updateCliente(Long id, Cliente cliente) {
+		if(!clienteRepository.existsById(id)) {
+			throw new EntityExistsException("Cliente già esistente!");
+		}
 		return clienteRepository.save(cliente);
 	}
+	
+	
+	
 	
     public List<Cliente> searchAllClienti(){
     	return clienteRepository.findAll();
