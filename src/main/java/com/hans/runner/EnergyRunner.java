@@ -156,11 +156,11 @@ public class EnergyRunner implements CommandLineRunner {
 		
 		for(int i = 0; i < 3; i++) {
 		Fattura f = new Fattura();
-		f.setData(LocalDateTime.now());
+		f.setData(LocalDateTime.now().minusDays(fake.number().numberBetween(1l, 2190l)));
 		f.setAnno(f.getData().getYear());
-		f.setImporto(fake.number().randomDouble(3, 3, 6));
+		f.setImporto(fake.number().randomDouble(3, 10000, 900000)+" €");
 		f.setNumeroFattura(fake.number().numberBetween(1, 1000));
-		f.setStato(statoFatturaRepository.findById(fake.number().numberBetween(1l, 2l)).get());
+		f.setStato(statoFatturaRepository.findById(fake.number().numberBetween(1l, 3l)).get());
 		fat.add(fatturaService.saveFattura(f));
 		}
 		
@@ -175,9 +175,9 @@ public class EnergyRunner implements CommandLineRunner {
 			
 		Indirizzo indirizzo = new Indirizzo();
 		
-		indirizzo.setVia(fake.address().firstName());
+		indirizzo.setVia("Via - "+fake.address().streetName());
 		indirizzo.setCivico(fake.address().buildingNumber());
-		indirizzo.setLocalita(fake.address().country());
+		indirizzo.setLocalita(fake.address().city());
 		indirizzo.setCap(fake.address().zipCode());
 		indirizzo.setComune(comuneRepository.findById(fake.number().numberBetween(1l, 7000l)).get());
 		ind.add(indirizzoService.saveIndirizzo(indirizzo));
@@ -192,17 +192,17 @@ public class EnergyRunner implements CommandLineRunner {
 		
 		//ISTANZIAMO CLASSE CLIENTE
 		Cliente c = new Cliente();
-		c.setRagione_sociale(fake.company().industry());
+		c.setRagione_sociale(fake.company().name());
 		c.setPartita_iva(fake.number().randomNumber(10, true));
-		c.setEmail(fake.name()+"."+fake.name().lastName()+"@gmail.com");
-		c.setDataInserimento(LocalDate.now());
-		c.setDataUltimoContatto(c.getDataInserimento().plusMonths(2));
-		c.setFatturatoAnnuale(fake.number().randomNumber());
-		c.setPec(fake.name()+"."+fake.name().lastName()+"@pec.com");
-		c.setTelefono(fake.phoneNumber().cellPhone());
-		c.setEmailContatto(fake.name()+"."+fake.name().lastName()+"@yahoo.it");
-		c.setNomeContatto(fake.name().name());
+		c.setNomeContatto(fake.name().firstName());
 		c.setCongomeContatto(fake.name().lastName());
+		c.setEmail(c.getNomeContatto()+"."+c.getCongomeContatto()+"@gmail.com");
+		c.setDataInserimento(LocalDate.now().minusDays(fake.number().numberBetween(1l, 366l)));
+		c.setDataUltimoContatto(c.getDataInserimento().plusDays(fake.number().numberBetween(1l, 366l)));
+		c.setFatturatoAnnuale(fake.number().randomNumber(8, false)+" €");
+		c.setPec(c.getNomeContatto()+"@pec.com");
+		c.setTelefono(fake.phoneNumber().cellPhone());
+		c.setEmailContatto(c.getNomeContatto()+"."+c.getCongomeContatto()+"@yahoo.it");
 		c.setTelefonoContatto(fake.phoneNumber().phoneNumber());
 		c.setSedeLegale(indirizzoService.searchIndirizzo(ind.get(0).getId()));
 		c.setSedeOperativa(indirizzoService.searchIndirizzo(ind.get(1).getId()));

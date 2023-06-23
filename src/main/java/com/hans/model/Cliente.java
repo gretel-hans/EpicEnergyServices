@@ -44,7 +44,7 @@ public class Cliente {
 	private LocalDate dataUltimoContatto;
 	
 	@Column(name = "fatturato_annuale")
-	private double fatturatoAnnuale;
+	private String fatturatoAnnuale;
 	
 	private String pec;
 	
