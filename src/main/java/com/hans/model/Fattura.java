@@ -35,4 +35,5 @@ public class Fattura {
 	
 	@ManyToOne
 	private StatoFattura stato;
+	
 }

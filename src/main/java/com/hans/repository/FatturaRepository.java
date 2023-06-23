@@ -5,6 +5,6 @@ import com.hans.model.Fattura;
 
 public interface FatturaRepository extends JpaRepository<Fattura, Long> {
 
-	
+
 	
 }

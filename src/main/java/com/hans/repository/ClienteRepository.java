@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.hans.model.Cliente;
+import java.time.LocalDate;
+
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
@@ -16,6 +18,12 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     //di quello che gli passiamo come parametro
 
 		public List<Cliente> findByFatturatoAnnualeGreaterThanEqual(double FatturatoAnnuale);
-        
+		
+	 
+		public List<Cliente> findByDataInserimentoAfter(LocalDate dataInserimento);
+		
+		public List<Cliente> findByDataUltimoContattoAfter(LocalDate dataUltimoContatto);
+    
+		public List<Cliente> findByNomeContattoContainsAllIgnoreCase(String nomeContatto);
 	
 }

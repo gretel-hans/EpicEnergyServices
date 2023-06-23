@@ -1,5 +1,6 @@
 package com.hans.services;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,17 @@ public class ClienteService {
     	return clienteRepository.findAll();
     	
     } 
+    
+    public List<Cliente> cercaPerDataInserimento(LocalDate dataInsert){
+    	return clienteRepository.findByDataInserimentoAfter(dataInsert);
+    }
+    
+    public List<Cliente> cercaPerDataUltimoContatto(LocalDate ultimoContatto){
+    	return clienteRepository.findByDataUltimoContattoAfter(ultimoContatto);
+    }
+    
+    public List<Cliente> cercaPerParteDelNome(String partName){
+    	return clienteRepository.findByNomeContattoContainsAllIgnoreCase(partName);
+    }
 }
   

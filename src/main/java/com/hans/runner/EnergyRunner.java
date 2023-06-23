@@ -77,8 +77,27 @@ public class EnergyRunner implements CommandLineRunner {
 			}
 		}
 
+		 System.out.println("----\nLista clienti per Fatturato annuale maggiore tot:\n----");
+		 
 		List<Cliente> listaClienti=clienteService.cercaPerFatturatoAnnualeMaggiore(9000000);
 		listaClienti.forEach(c->System.out.println(c.getNomeContatto()));
+		
+		
+		 System.out.println("----\nLista clienti per data di inserimento contatto:\n----");
+		
+		List<Cliente> listaDataInserimento=clienteService.cercaPerDataInserimento(LocalDate.of(2022, 10, 6));
+		listaDataInserimento.forEach(d->System.out.println(d.getDataInserimento() + " " +d.getNomeContatto()+" "+d.getCongomeContatto()));
+
+		
+		 System.out.println("----\nLista clienti per data dell'ultimo contatto:\n----");
+		
+		List<Cliente> listaDataUltimoContatto=clienteService.cercaPerDataUltimoContatto(LocalDate.of(2022, 1, 10));
+		listaDataUltimoContatto.forEach(u->System.out.println(u.getDataUltimoContatto()+" "+u.getNomeContatto()+" "+u.getCongomeContatto()));
+
+		System.out.println("----\nLista clienti per parte del nome del contatto:\n----");
+			
+		List<Cliente> listaParteDelNome=clienteService.cercaPerParteDelNome("M");
+		listaParteDelNome.forEach(n->System.out.println(n.getNomeContatto()));
 
 
 	}
